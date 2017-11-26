@@ -33,7 +33,7 @@ CLASSIFIERS = [
 
 setup(
     name='djangocms-googlecalendar',
-    version=0.1,
+    version=__version__,
     author='Ben Miller',
     author_email='mail@benkmiller.com',
     url='https://github.com/benjiyamin/djangocms-googlecalendar',

@@ -6,4 +6,5 @@ __pycache__/
 .eggs/
 dist/
 build/
+MANIFEST.in
 venv/
