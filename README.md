@@ -14,10 +14,10 @@ Django CMS Google Calendar Plugin is a set of plugins for Django CMS that allow 
 
         INSTALLED_APPS = [
             ...
-            'djangocms_googlecalendar-plugin',
+            'djangocms_googlecalendar_plugin',
         ]
 
-3. Run `python manage.py migrate djangocms_googlecalendar-plugin` to create the plugin models.
+3. Run `python manage.py migrate djangocms_googlecalendar_plugin` to create the plugin models.
 
 ## Running Tests
 
