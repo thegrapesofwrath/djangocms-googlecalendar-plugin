@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import django.db.models.deletion
 from django.db import migrations, models
-
 
 class Migration(migrations.Migration):
 
@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(verbose_name='Calendar title', blank=True, max_length=255)),
                 ('width', models.CharField(default='100%', help_text='Width of the calendar, including the CSS length units (e.g. "100%", "400px" or "400rem").', verbose_name='Width', max_length=6)),
                 ('height', models.CharField(default='400px', help_text='Height of the calendar, including the CSS length units (e.g. "400px" or "400rem").', verbose_name='Height', max_length=6)),
-                ('cmsplugin_ptr', models.OneToOneField(related_name='djangocms_googlecalendar_googlecalendar', to='cms.CMSPlugin', parent_link=True, primary_key=True, serialize=False)),
+                ('cmsplugin_ptr', models.OneToOneField(related_name='djangocms_googlecalendar_googlecalendar', to='cms.CMSPlugin', parent_link=True, primary_key=True, serialize=False,on_delete=django.db.models.deletion.CASCADE)),
             ],
             options={
                 'abstract': False,

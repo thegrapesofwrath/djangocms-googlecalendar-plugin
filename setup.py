@@ -2,7 +2,7 @@
 
 from setuptools import find_packages, setup
 
-from djangocms_googlecalendar import __version__
+from djangocms_googlecalendar_plugin import __version__
 
 
 REQUIREMENTS = [
@@ -24,6 +24,9 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
     'Topic :: Internet :: WWW/HTTP',
     'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     'Topic :: Software Development :: Libraries :: Application Frameworks',
@@ -32,14 +35,16 @@ CLASSIFIERS = [
 
 
 setup(
-    name='djangocms-googlecalendar',
+    name='djangocms-googlecalendar-plugin',
+    # packages = ['djangocms-googlecalendar-plugin'], 
     version=__version__,
-    author='Ben Miller',
-    author_email='mail@benkmiller.com',
-    url='https://github.com/benjiyamin/djangocms-googlecalendar',
+    author='Shawn Hartley',
+    author_email='shawn@novusterra.com',
+    url='https://github.com/thegrapesofwrath/djangocms-googlecalendar-plugin',
     license='GNU General Public License v3 (GPLv3), see LICENSE.md',
-    description=('Adds Google Calendar plugins to django CMS.'),
+    description='Adds Google Calendar plugins to django CMS.',
     long_description=open('README.md').read(),
+    long_description_content_type = 'text/markdown',
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,

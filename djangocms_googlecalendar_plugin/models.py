@@ -7,10 +7,13 @@ from __future__ import unicode_literals
 import re
 import json
 
+import uuid
+
 from django.db import models
 from django.conf import settings
 from django.core.exceptions import ValidationError
-from django.utils.encoding import python_2_unicode_compatible
+# from django.utils.encoding import python_2_unicode_compatible
+from six import python_2_unicode_compatible
 from django.utils.translation import ugettext, ugettext_lazy as _
 
 from cms.models import CMSPlugin
@@ -51,6 +54,8 @@ class GoogleCalendar(CMSPlugin):
         help_text=_('Height of the calendar, including the CSS length units (e.g. "400px" or "400rem").'),
     )
 
+    # slug = models.SlugField(unique=True, default=uuid.uuid1)
+
     # Add an app namespace to related_name to avoid field name clashes
     # with any other plugins that have a field with the same name as the
     # lowercase of the class name of this model.
@@ -59,6 +64,7 @@ class GoogleCalendar(CMSPlugin):
         CMSPlugin,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        on_delete=models.CASCADE
     )
 
     def __str__(self):
